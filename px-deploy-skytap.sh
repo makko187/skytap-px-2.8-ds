@@ -29,7 +29,7 @@ kubectl get secrets -A | grep px-pure-secret
 sleep 5
 
 echo " Step 3. Install Prometheus Operator and check if the POD is running:"
-kubectl apply -f https://docs.portworx.com/samples/k8s/portworx-pxc-operator.yaml
+kubectl apply -f portworx-pxc-operator.yaml
 
 while true; do
     NUM_READY=`kubectl get pods -n kube-system -o wide | grep prometheus-operator | grep Running | wc -l`
